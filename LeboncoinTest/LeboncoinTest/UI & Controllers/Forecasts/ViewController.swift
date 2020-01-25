@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let manager = ForecastsManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ForecastsManager().forecasts() { (forecasts) in
+        manager.forecasts { (forecasts) in
             print(forecasts)
         }
     }

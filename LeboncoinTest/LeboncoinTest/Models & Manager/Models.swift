@@ -65,16 +65,50 @@ struct ForecastResponse: Codable {
 
 struct Forecast: Codable {
     let pressure: Pressure
+    let temperature: Temperature
+    let clouds: Clouds
     
     enum CodingKeys: String, CodingKey {
         case pressure = "pression"
+        case temperature = "temperature"
+        case clouds = "nebulosite"
     }
     
     struct Pressure: Codable {
-        let water_level: Int
+        let seaLvl: Int
         
         enum CodingKeys: String, CodingKey {
-            case water_level = "niveau_de_la_mer"
+            case seaLvl = "niveau_de_la_mer"
+        }
+    }
+    
+    struct Temperature: Codable {
+        let main: Double
+        let _2m: Double
+        let _500hPa: Double
+        let _850hPa: Double
+        
+        enum CodingKeys: String, CodingKey {
+            case main = "sol"
+            case _2m = "2m"
+            case _500hPa = "500hPa"
+            case _850hPa = "850hPa"
+        }
+    }
+    
+    struct Clouds: Codable {
+        let total: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case total = "totale"
+        }
+    }
+    
+    struct Humidity: Codable {
+        let _2m: Double
+        
+        enum CodingKeys: String, CodingKey {
+            case _2m = "2m"
         }
     }
 }
