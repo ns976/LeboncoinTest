@@ -13,3 +13,68 @@ struct Location: Codable {
     let latitude: Double
     let longitude: Double
 }
+
+struct DynamicKey: CodingKey {
+    var intValue: Int?
+    
+    init?(intValue: Int) {
+        return nil
+    }
+    
+    var stringValue: String
+    init?(stringValue: String) {
+        self.stringValue = stringValue
+    }
+}
+
+struct ForecastResponse: Codable {
+    let request_state: Int
+    let message: String
+    var forecasts: [Date: Forecast]
+    
+    enum CodingKeys: String, CodingKey {
+        case request_state, message, forecasts
+    }
+    
+    init(from decoder: Decoder) throws {
+        let dynamicKeysContainer = try decoder.container(keyedBy: DynamicKey.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.request_state = try container.decode(Int.self, forKey: .request_state)
+        self.message = try container.decode(String.self, forKey: .message)
+        
+        do {
+            //Decoding à partir de la sauvegarde locale (une sérialisation du modèle)
+            self.forecasts = try container.decode([Date: Forecast].self, forKey: .forecasts)
+        } catch {
+            //Decoding à partir de la structure de resultat du webservice
+            var forecasts = [Date: Forecast]()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            try dynamicKeysContainer.allKeys.forEach { key in
+                if key.stringValue.range(of: #"(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+)\w+"#, options: .regularExpression) != nil {
+                    if let date = formatter.date(from: key.stringValue) {
+                        let forecast = try dynamicKeysContainer.decode(Forecast.self, forKey: key)
+                        forecasts[date] = forecast
+                    }
+                }
+            }
+            self.forecasts = forecasts
+        }
+    }
+}
+
+struct Forecast: Codable {
+    let pressure: Pressure
+    
+    enum CodingKeys: String, CodingKey {
+        case pressure = "pression"
+    }
+    
+    struct Pressure: Codable {
+        let water_level: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case water_level = "niveau_de_la_mer"
+        }
+    }
+}

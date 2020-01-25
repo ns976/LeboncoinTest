@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ForecastsManager().forecasts() { (forecasts) in
+            print(forecasts)
+        }
     }
 }
 
