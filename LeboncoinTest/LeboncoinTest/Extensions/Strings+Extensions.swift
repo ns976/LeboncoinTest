@@ -1,5 +1,5 @@
 //
-//  ServiceError.swift
+//  Strings+Extensions.swift
 //  LeboncoinTest
 //
 //  Created by Sébastien Gousseau on 25/01/2020.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-enum ServiceError: Error {
-    case notImplemented(service: String)
+extension String {
+    func toURL() -> URL? {
+        return URL(string: self)
+    }
 }
