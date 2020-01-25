@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Location: Codable {
+    let city: String
+    let latitude: Double
+    let longitude: Double
+}

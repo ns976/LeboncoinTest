@@ -24,6 +24,7 @@
 		5CDF650123DCD6980014B1DA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650023DCD6980014B1DA /* LocationService.swift */; };
 		5CDF650423DCD6F30014B1DA /* ForecastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */; };
 		5CDF650623DCDA7E0014B1DA /* Strings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650523DCDA7E0014B1DA /* Strings+Extensions.swift */; };
+		5CDF650823DCDC670014B1DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF650723DCDC670014B1DA /* CoreLocation.framework */; };
 		7577AFF5A01F34CC4E53685A /* Pods_LeboncoinTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24573CA7F5087CCE563A807D /* Pods_LeboncoinTestTests.framework */; };
 		DB0CAA0E1C8C3668B110D858 /* Pods_LeboncoinTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		5CDF650023DCD6980014B1DA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsViewModel.swift; sourceTree = "<group>"; };
 		5CDF650523DCDA7E0014B1DA /* Strings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extensions.swift"; sourceTree = "<group>"; };
+		5CDF650723DCDC670014B1DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeboncoinTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887B988DBCA8D293386A7704 /* Pods-LeboncoinTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTestTests.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTestTests/Pods-LeboncoinTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B29053AEF1A0FE9744C9C7D7 /* Pods-LeboncoinTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTest.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTest/Pods-LeboncoinTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDF650823DCDC670014B1DA /* CoreLocation.framework in Frameworks */,
 				DB0CAA0E1C8C3668B110D858 /* Pods_LeboncoinTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +94,7 @@
 		11949D9C6D88F68D82409C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CDF650723DCDC670014B1DA /* CoreLocation.framework */,
 				62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */,
 				24573CA7F5087CCE563A807D /* Pods_LeboncoinTestTests.framework */,
 			);

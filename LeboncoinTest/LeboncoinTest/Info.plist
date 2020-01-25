@@ -25,6 +25,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Autorisez la localisation si vous voulez afficher la ville dans laquelle vous êtes.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Autorisez la localisation si vous voulez afficher la ville dans laquelle vous êtes.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
