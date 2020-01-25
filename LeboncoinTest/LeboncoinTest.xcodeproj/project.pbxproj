@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,15 @@
 		5CDF64D523DCD3CD0014B1DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF64D423DCD3CD0014B1DA /* Assets.xcassets */; };
 		5CDF64D823DCD3CD0014B1DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF64D623DCD3CD0014B1DA /* LaunchScreen.storyboard */; };
 		5CDF64E323DCD3CD0014B1DA /* LeboncoinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64E223DCD3CD0014B1DA /* LeboncoinTestTests.swift */; };
+		5CDF64F023DCD5920014B1DA /* ForecastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64EF23DCD5920014B1DA /* ForecastsViewController.swift */; };
+		5CDF64F223DCD5AF0014B1DA /* ForecastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64F123DCD5AF0014B1DA /* ForecastDetailViewController.swift */; };
+		5CDF64F523DCD5E30014B1DA /* ForecastsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64F423DCD5E30014B1DA /* ForecastsManager.swift */; };
+		5CDF64F723DCD62E0014B1DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64F623DCD62E0014B1DA /* Models.swift */; };
+		5CDF64FB23DCD6700014B1DA /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64FA23DCD6700014B1DA /* ServiceError.swift */; };
+		5CDF64FD23DCD6800014B1DA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64FC23DCD6800014B1DA /* NetworkService.swift */; };
+		5CDF64FF23DCD6890014B1DA /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64FE23DCD6890014B1DA /* StorageService.swift */; };
+		5CDF650123DCD6980014B1DA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650023DCD6980014B1DA /* LocationService.swift */; };
+		5CDF650423DCD6F30014B1DA /* ForecastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */; };
 		7577AFF5A01F34CC4E53685A /* Pods_LeboncoinTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24573CA7F5087CCE563A807D /* Pods_LeboncoinTestTests.framework */; };
 		DB0CAA0E1C8C3668B110D858 /* Pods_LeboncoinTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +52,15 @@
 		5CDF64DE23DCD3CD0014B1DA /* LeboncoinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDF64E223DCD3CD0014B1DA /* LeboncoinTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeboncoinTestTests.swift; sourceTree = "<group>"; };
 		5CDF64E423DCD3CD0014B1DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CDF64EF23DCD5920014B1DA /* ForecastsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsViewController.swift; sourceTree = "<group>"; };
+		5CDF64F123DCD5AF0014B1DA /* ForecastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailViewController.swift; sourceTree = "<group>"; };
+		5CDF64F423DCD5E30014B1DA /* ForecastsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsManager.swift; sourceTree = "<group>"; };
+		5CDF64F623DCD62E0014B1DA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5CDF64FA23DCD6700014B1DA /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		5CDF64FC23DCD6800014B1DA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5CDF64FE23DCD6890014B1DA /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		5CDF650023DCD6980014B1DA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsViewModel.swift; sourceTree = "<group>"; };
 		62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeboncoinTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887B988DBCA8D293386A7704 /* Pods-LeboncoinTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTestTests.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTestTests/Pods-LeboncoinTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B29053AEF1A0FE9744C9C7D7 /* Pods-LeboncoinTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTest.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTest/Pods-LeboncoinTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,13 +118,14 @@
 		5CDF64CA23DCD3CC0014B1DA /* LeboncoinTest */ = {
 			isa = PBXGroup;
 			children = (
+				5CDF64D923DCD3CD0014B1DA /* Info.plist */,
 				5CDF64CB23DCD3CC0014B1DA /* AppDelegate.swift */,
 				5CDF64CD23DCD3CC0014B1DA /* SceneDelegate.swift */,
-				5CDF64CF23DCD3CC0014B1DA /* ViewController.swift */,
-				5CDF64D123DCD3CC0014B1DA /* Main.storyboard */,
-				5CDF64D423DCD3CD0014B1DA /* Assets.xcassets */,
-				5CDF64D623DCD3CD0014B1DA /* LaunchScreen.storyboard */,
-				5CDF64D923DCD3CD0014B1DA /* Info.plist */,
+				5CDF64ED23DCD5530014B1DA /* UI & Controllers */,
+				5CDF64F323DCD5C10014B1DA /* Models & Manager */,
+				5CDF64F923DCD6500014B1DA /* Services */,
+				5CDF64F823DCD64A0014B1DA /* Extensions */,
+				5CDF64EE23DCD56A0014B1DA /* Resources */,
 			);
 			path = LeboncoinTest;
 			sourceTree = "<group>";
@@ -120,6 +139,62 @@
 			path = LeboncoinTestTests;
 			sourceTree = "<group>";
 		};
+		5CDF64ED23DCD5530014B1DA /* UI & Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CDF64D623DCD3CD0014B1DA /* LaunchScreen.storyboard */,
+				5CDF64D123DCD3CC0014B1DA /* Main.storyboard */,
+				5CDF650223DCD6C30014B1DA /* Forecasts */,
+			);
+			path = "UI & Controllers";
+			sourceTree = "<group>";
+		};
+		5CDF64EE23DCD56A0014B1DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CDF64D423DCD3CD0014B1DA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5CDF64F323DCD5C10014B1DA /* Models & Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5CDF64F423DCD5E30014B1DA /* ForecastsManager.swift */,
+				5CDF64F623DCD62E0014B1DA /* Models.swift */,
+			);
+			path = "Models & Manager";
+			sourceTree = "<group>";
+		};
+		5CDF64F823DCD64A0014B1DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5CDF64F923DCD6500014B1DA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5CDF64FA23DCD6700014B1DA /* ServiceError.swift */,
+				5CDF64FC23DCD6800014B1DA /* NetworkService.swift */,
+				5CDF64FE23DCD6890014B1DA /* StorageService.swift */,
+				5CDF650023DCD6980014B1DA /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5CDF650223DCD6C30014B1DA /* Forecasts */ = {
+			isa = PBXGroup;
+			children = (
+				5CDF64CF23DCD3CC0014B1DA /* ViewController.swift */,
+				5CDF64EF23DCD5920014B1DA /* ForecastsViewController.swift */,
+				5CDF64F123DCD5AF0014B1DA /* ForecastDetailViewController.swift */,
+				5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */,
+			);
+			path = Forecasts;
+			sourceTree = "<group>";
+		};
 		6529350847437D1A8F1871B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +203,6 @@
 				887B988DBCA8D293386A7704 /* Pods-LeboncoinTestTests.debug.xcconfig */,
 				5BC8B918FF74FA980D681165 /* Pods-LeboncoinTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,9 +374,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDF64FB23DCD6700014B1DA /* ServiceError.swift in Sources */,
+				5CDF650423DCD6F30014B1DA /* ForecastsViewModel.swift in Sources */,
+				5CDF64F223DCD5AF0014B1DA /* ForecastDetailViewController.swift in Sources */,
 				5CDF64D023DCD3CC0014B1DA /* ViewController.swift in Sources */,
+				5CDF64F023DCD5920014B1DA /* ForecastsViewController.swift in Sources */,
+				5CDF64FD23DCD6800014B1DA /* NetworkService.swift in Sources */,
+				5CDF64FF23DCD6890014B1DA /* StorageService.swift in Sources */,
+				5CDF650123DCD6980014B1DA /* LocationService.swift in Sources */,
 				5CDF64CC23DCD3CC0014B1DA /* AppDelegate.swift in Sources */,
+				5CDF64F523DCD5E30014B1DA /* ForecastsManager.swift in Sources */,
 				5CDF64CE23DCD3CC0014B1DA /* SceneDelegate.swift in Sources */,
+				5CDF64F723DCD62E0014B1DA /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
