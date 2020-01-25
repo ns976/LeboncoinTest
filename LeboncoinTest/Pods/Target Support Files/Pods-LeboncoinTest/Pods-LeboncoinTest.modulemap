@@ -1,0 +1,6 @@
+framework module Pods_LeboncoinTest {
+  umbrella header "Pods-LeboncoinTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
