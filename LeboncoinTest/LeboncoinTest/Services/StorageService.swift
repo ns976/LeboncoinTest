@@ -31,7 +31,7 @@ class UserDefaultStorage: StorageService {
     
     @discardableResult
     func save<T>(encodable: T, key: String) -> Bool where T: Encodable {
-        guard let encoding = try? PropertyListEncoder().encode(encodable) else {
+        guard let encoding = try? JSONEncoder().encode(encodable) else {
             return false
         }
         self.container.set(encoding, forKey: key)
@@ -42,7 +42,7 @@ class UserDefaultStorage: StorageService {
     @discardableResult
     func load<T>(key: String) -> T? where T: Decodable {
         if let data = self.container.object(forKey: key) as? Data {
-            return try? PropertyListDecoder().decode(T.self, from: data)
+            return try? JSONDecoder().decode(T.self, from: data)
         }
         
         return nil

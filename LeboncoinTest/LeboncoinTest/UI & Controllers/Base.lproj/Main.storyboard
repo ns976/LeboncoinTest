@@ -1,24 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HM0-Y4-r33">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Forecasts View Controller-->
+        <scene sceneID="zVY-CW-2S2">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="FirstViewController" id="HM0-Y4-r33" customClass="ForecastsViewController" customModule="LeboncoinTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fqD-Y6-l7y"/>
+                        <viewControllerLayoutGuide type="bottom" id="dlx-AM-Vby"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hKJ-oQ-GmA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="hTE-77-usE">
+                                <rect key="frame" x="167" y="60" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="NGc-WS-uoQ"/>
+                                    <constraint firstAttribute="height" constant="80" id="mhJ-v9-p1V"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="logo"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="3cm-hA-Qbw">
+                                <rect key="frame" x="20" y="156" width="374" height="63"/>
+                                <string key="text">{city}
+{temp}°</string>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="28"/>
+                                <color key="textColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X07-Um-Mhq">
+                                <rect key="frame" x="87" y="249" width="240" height="112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGX-zU-2nv">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chX-ox-5Xj">
+                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Vent:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{wind} m/s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODC-Q4-Tgx">
+                                                <rect key="frame" x="147.5" y="0.0" width="92.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWv-KW-SX1">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyw-9x-Di8">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Nuages:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{clouds} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wid-bX-0cw">
+                                                <rect key="frame" x="145" y="0.0" width="95" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8os-Lb-aa3">
+                                        <rect key="frame" x="0.0" y="56" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V20-VM-EcZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Humidité:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{humidity} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-c8-IVD">
+                                                <rect key="frame" x="128.5" y="0.0" width="111.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydV-v6-HMI">
+                                        <rect key="frame" x="0.0" y="84" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oj-ft-bNy">
+                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Pression:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{pressure} hpa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-Bv-P36">
+                                                <rect key="frame" x="109.5" y="0.0" width="130.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="CRD-Yd-oGr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="zsW-VL-NDk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="stack"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FGR-0L-loA">
+                                <rect key="frame" x="20" y="391" width="374" height="391"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="HIX-Y0-Cej">
+                                    <size key="itemSize" width="80" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="9" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="m0B-iY-Asp" customClass="ForecastCell" customModule="LeboncoinTest" customModuleProvider="target">
+                                        <rect key="frame" x="9" y="0.0" width="80" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUT-b7-024">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="0yW-7M-cJi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-nE-ciy">
+                                                    <rect key="frame" x="0.0" y="60" width="80" height="60"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">{day}
+{hour}h
+{temp}°</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="24" name="Arial-Black"/>
+                                                                <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Zeg-nE-ciy" secondAttribute="trailing" id="64M-f7-Qai"/>
+                                            <constraint firstItem="Zeg-nE-ciy" firstAttribute="leading" secondItem="m0B-iY-Asp" secondAttribute="leading" id="8jq-px-OaX"/>
+                                            <constraint firstItem="MUT-b7-024" firstAttribute="leading" secondItem="m0B-iY-Asp" secondAttribute="leading" id="C8p-rd-xM4"/>
+                                            <constraint firstAttribute="trailing" secondItem="MUT-b7-024" secondAttribute="trailing" id="u8r-dC-Guu"/>
+                                            <constraint firstItem="MUT-b7-024" firstAttribute="top" secondItem="m0B-iY-Asp" secondAttribute="top" id="wRH-Y6-n4d"/>
+                                            <constraint firstItem="Zeg-nE-ciy" firstAttribute="top" secondItem="MUT-b7-024" secondAttribute="bottom" id="zRD-cr-Vmk"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zeg-nE-ciy" secondAttribute="bottom" constant="10" id="zVH-HO-Jyd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="weatherIcon" destination="MUT-b7-024" id="frD-Lp-lvc"/>
+                                            <outlet property="weatherText" destination="Zeg-nE-ciy" id="JAx-Wv-tRK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="HM0-Y4-r33" id="7zb-Lt-128"/>
+                                    <outlet property="delegate" destination="HM0-Y4-r33" id="wZU-op-3W2"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-ZU-DqC">
+                                <rect key="frame" x="187" y="802" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OWZ-1u-cFv"/>
+                                    <constraint firstAttribute="width" constant="40" id="Yjh-KB-8wn"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FGR-0L-loA" firstAttribute="trailing" secondItem="omW-tD-0w1" secondAttribute="trailing" constant="-20" id="B5g-0f-qBL"/>
+                            <constraint firstItem="omW-tD-0w1" firstAttribute="trailing" secondItem="3cm-hA-Qbw" secondAttribute="trailing" constant="20" id="KCz-si-Sbp"/>
+                            <constraint firstItem="X07-Um-Mhq" firstAttribute="top" secondItem="3cm-hA-Qbw" secondAttribute="bottom" constant="30" id="KRm-Pl-M9j"/>
+                            <constraint firstItem="hTE-77-usE" firstAttribute="top" secondItem="fqD-Y6-l7y" secondAttribute="bottom" constant="16" id="Nik-LH-b39"/>
+                            <constraint firstItem="3cm-hA-Qbw" firstAttribute="leading" secondItem="omW-tD-0w1" secondAttribute="leading" constant="20" id="P33-MY-QuC"/>
+                            <constraint firstItem="hTE-77-usE" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="PzT-Yo-omO"/>
+                            <constraint firstItem="X07-Um-Mhq" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="WRh-s8-Smg"/>
+                            <constraint firstItem="Ntc-ZU-DqC" firstAttribute="top" secondItem="FGR-0L-loA" secondAttribute="bottom" constant="20" id="dsP-8l-BgY"/>
+                            <constraint firstItem="X07-Um-Mhq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="omW-tD-0w1" secondAttribute="leading" constant="10" id="eI5-ak-HBf"/>
+                            <constraint firstItem="FGR-0L-loA" firstAttribute="leading" secondItem="omW-tD-0w1" secondAttribute="leading" constant="20" id="fxC-uY-0sd"/>
+                            <constraint firstItem="dlx-AM-Vby" firstAttribute="top" secondItem="Ntc-ZU-DqC" secondAttribute="bottom" constant="20" id="i0T-kV-ytj"/>
+                            <constraint firstItem="3cm-hA-Qbw" firstAttribute="top" secondItem="hTE-77-usE" secondAttribute="bottom" constant="16" id="pYO-gp-hfB"/>
+                            <constraint firstItem="FGR-0L-loA" firstAttribute="top" secondItem="X07-Um-Mhq" secondAttribute="bottom" constant="30" id="ue4-67-4nk"/>
+                            <constraint firstItem="Ntc-ZU-DqC" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="vN3-Tj-X7p"/>
+                            <constraint firstItem="omW-tD-0w1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X07-Um-Mhq" secondAttribute="trailing" constant="10" id="yyc-yd-xCe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="omW-tD-0w1"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="cloudsValueLabel" destination="wid-bX-0cw" id="jLx-2u-nht"/>
+                        <outlet property="collectionView" destination="FGR-0L-loA" id="OoO-BM-QDQ"/>
+                        <outlet property="globalWeatherImage" destination="hTE-77-usE" id="AZV-Fc-LDX"/>
+                        <outlet property="humidityValueLabel" destination="KDf-c8-IVD" id="iWS-zT-K5a"/>
+                        <outlet property="pressureValueLabel" destination="f3K-Bv-P36" id="fk9-C8-F6h"/>
+                        <outlet property="refreshButton" destination="Ntc-ZU-DqC" id="sbW-jW-F2C"/>
+                        <outlet property="tempValueLabel" destination="3cm-hA-Qbw" id="lXZ-Eq-ptg"/>
+                        <outlet property="windValueLabel" destination="ODC-Q4-Tgx" id="cST-Zs-DGH"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFn-gn-p2n" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="948" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="day" width="190" height="193"/>
+        <image name="refresh" width="192" height="192"/>
+    </resources>
 </document>

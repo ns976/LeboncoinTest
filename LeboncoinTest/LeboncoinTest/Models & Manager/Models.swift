@@ -53,7 +53,9 @@ struct ForecastResponse: Codable {
             try dynamicKeysContainer.allKeys.forEach { key in
                 if key.stringValue.range(of: #"(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+)\w+"#, options: .regularExpression) != nil {
                     if let date = formatter.date(from: key.stringValue) {
-                        let forecast = try dynamicKeysContainer.decode(Forecast.self, forKey: key)
+                        var forecast = try dynamicKeysContainer.decode(Forecast.self, forKey: key)
+                        //On ajoute manuellement la date dans la prévision, ce sera plus pratique lors de l'utilisation d'un Forecast comme modèle
+                        forecast.date = date
                         forecasts[date] = forecast
                     }
                 }
@@ -67,11 +69,30 @@ struct Forecast: Codable {
     let pressure: Pressure
     let temperature: Temperature
     let clouds: Clouds
+    let humidity: Humidity
+    let wind: Wind
+    var date: Date?
+    
+    private let _rain: Float
+    private let _snow: String
+    
+    var rain: Bool {
+        return _rain > 0
+    }
+    
+    var snow: Bool {
+        return _snow != "non" //L'api m'a quand même bien fait rigoler :D
+    }
     
     enum CodingKeys: String, CodingKey {
         case pressure = "pression"
         case temperature = "temperature"
         case clouds = "nebulosite"
+        case humidity = "humidite"
+        case wind = "vent_moyen"
+        case _rain = "pluie"
+        case _snow = "risque_neige"
+        case date
     }
     
     struct Pressure: Codable {
@@ -109,6 +130,14 @@ struct Forecast: Codable {
         
         enum CodingKeys: String, CodingKey {
             case _2m = "2m"
+        }
+    }
+    
+    struct Wind: Codable {
+        let _10m: Double
+        
+        enum CodingKeys: String, CodingKey {
+            case _10m = "10m"
         }
     }
 }

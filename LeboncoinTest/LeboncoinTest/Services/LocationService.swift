@@ -28,7 +28,13 @@ class CoreLocationService: NSObject, LocationService {
     
     func location(completion: @escaping (Location?) -> Void) {
         callback = completion
-        manager.requestAlwaysAuthorization()
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        default:
+            manager.requestAlwaysAuthorization()
+        }
     }
 }
 
@@ -37,7 +43,9 @@ extension CoreLocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            manager.startUpdatingLocation()
+            if callback != nil { //On ne démarre pas le service par défault, à l'init "callback" vaut nil.
+                manager.startUpdatingLocation()
+            }
         default:
             break
         }
@@ -46,7 +54,6 @@ extension CoreLocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             manager.stopUpdatingLocation()
-            
             geocoder.reverseGeocodeLocation(location) { [unowned self] (placemarks, error) in
                 if error != nil {
                     self.callback?(Location(city: "-",

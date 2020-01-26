@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class ForecastsManager {
     
@@ -14,21 +15,26 @@ class ForecastsManager {
     let storage = DefaultStorageService()
     let location = DefaultLocationService()
     
-    var savedForecasts = [Date: Forecast]()
+    var currentForecasts = [Date: Forecast]()
+    var currentCity = "-"
     
     init() {
         load()
     }
     
-    private func save(_ forecasts: [Date: Forecast]) {
-        savedForecasts = forecasts
-        storage.save(encodable: savedForecasts, key: "forecasts")
+    private func save(_ city: String, _ forecasts: [Date: Forecast]) {
+        currentForecasts = forecasts
+        currentCity = city
+        storage.save(encodable: currentForecasts, key: "forecasts")
+        storage.save(encodable: currentCity, key: "city")
     }
     
     private func load() {
-        savedForecasts = storage.load(key: "forecasts") ?? [:]
+        currentForecasts = storage.load(key: "forecasts") ?? [:]
+        currentCity = storage.load(key: "city") ?? ""
     }
     
+    //Récupère la ville corresponsant à la localisation de l'utilisateur ainsi que les prévisions de celle-ci
     func forecasts(completion: @escaping ([Date: Forecast]) -> Void) {
         location.location { [unowned self] (location) in
             if let location = location {
@@ -36,7 +42,7 @@ class ForecastsManager {
                 self.network.get(ForecastResponse.self, route: endpoint) { (result) in
                     switch result {
                     case .success(let response):
-                        self.save(response.forecasts)
+                        self.save(location.city, response.forecasts)
                         completion(response.forecasts)
                     case .failure:
                         completion([:])
@@ -44,6 +50,21 @@ class ForecastsManager {
                 }
             } else {
                 completion([:])
+            }
+        }
+    }
+}
+
+extension ForecastsManager: ReactiveCompatible {}
+extension Reactive where Base: ForecastsManager {
+    func forecasts() -> Observable<[Date: Forecast]> {
+        return Observable.deferred { () -> Observable<[Date: Forecast]> in
+            return Observable.create { (observer) -> Disposable in
+                self.base.forecasts { (result) in
+                    observer.onNext(result)
+                    observer.onCompleted()
+                }
+                return Disposables.create()
             }
         }
     }

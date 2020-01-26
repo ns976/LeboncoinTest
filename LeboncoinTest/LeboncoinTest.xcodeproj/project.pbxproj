@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5CDF64CC23DCD3CC0014B1DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64CB23DCD3CC0014B1DA /* AppDelegate.swift */; };
 		5CDF64CE23DCD3CC0014B1DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64CD23DCD3CC0014B1DA /* SceneDelegate.swift */; };
-		5CDF64D023DCD3CC0014B1DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF64CF23DCD3CC0014B1DA /* ViewController.swift */; };
 		5CDF64D323DCD3CC0014B1DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF64D123DCD3CC0014B1DA /* Main.storyboard */; };
 		5CDF64D523DCD3CD0014B1DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF64D423DCD3CD0014B1DA /* Assets.xcassets */; };
 		5CDF64D823DCD3CD0014B1DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF64D623DCD3CD0014B1DA /* LaunchScreen.storyboard */; };
@@ -25,6 +24,7 @@
 		5CDF650423DCD6F30014B1DA /* ForecastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */; };
 		5CDF650623DCDA7E0014B1DA /* Strings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF650523DCDA7E0014B1DA /* Strings+Extensions.swift */; };
 		5CDF650823DCDC670014B1DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF650723DCDC670014B1DA /* CoreLocation.framework */; };
+		5CF8E2F123DCF8F9004DEA5C /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8E2F023DCF8F9004DEA5C /* ForecastCell.swift */; };
 		7577AFF5A01F34CC4E53685A /* Pods_LeboncoinTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24573CA7F5087CCE563A807D /* Pods_LeboncoinTestTests.framework */; };
 		DB0CAA0E1C8C3668B110D858 /* Pods_LeboncoinTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,6 @@
 		5CDF64C823DCD3CC0014B1DA /* LeboncoinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeboncoinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDF64CB23DCD3CC0014B1DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDF64CD23DCD3CC0014B1DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CDF64CF23DCD3CC0014B1DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CDF64D223DCD3CC0014B1DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CDF64D423DCD3CD0014B1DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CDF64D723DCD3CD0014B1DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsViewModel.swift; sourceTree = "<group>"; };
 		5CDF650523DCDA7E0014B1DA /* Strings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extensions.swift"; sourceTree = "<group>"; };
 		5CDF650723DCDC670014B1DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5CF8E2F023DCF8F9004DEA5C /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		62DD4E845F640FFD604656DA /* Pods_LeboncoinTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeboncoinTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887B988DBCA8D293386A7704 /* Pods-LeboncoinTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTestTests.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTestTests/Pods-LeboncoinTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B29053AEF1A0FE9744C9C7D7 /* Pods-LeboncoinTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeboncoinTest.debug.xcconfig"; path = "Target Support Files/Pods-LeboncoinTest/Pods-LeboncoinTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,10 +194,10 @@
 		5CDF650223DCD6C30014B1DA /* Forecasts */ = {
 			isa = PBXGroup;
 			children = (
-				5CDF64CF23DCD3CC0014B1DA /* ViewController.swift */,
 				5CDF64EF23DCD5920014B1DA /* ForecastsViewController.swift */,
 				5CDF64F123DCD5AF0014B1DA /* ForecastDetailViewController.swift */,
 				5CDF650323DCD6F30014B1DA /* ForecastsViewModel.swift */,
+				5CF8E2F023DCF8F9004DEA5C /* ForecastCell.swift */,
 			);
 			path = Forecasts;
 			sourceTree = "<group>";
@@ -384,7 +384,6 @@
 				5CDF64FB23DCD6700014B1DA /* ServiceError.swift in Sources */,
 				5CDF650423DCD6F30014B1DA /* ForecastsViewModel.swift in Sources */,
 				5CDF64F223DCD5AF0014B1DA /* ForecastDetailViewController.swift in Sources */,
-				5CDF64D023DCD3CC0014B1DA /* ViewController.swift in Sources */,
 				5CDF64F023DCD5920014B1DA /* ForecastsViewController.swift in Sources */,
 				5CDF650623DCDA7E0014B1DA /* Strings+Extensions.swift in Sources */,
 				5CDF64FD23DCD6800014B1DA /* NetworkService.swift in Sources */,
@@ -393,6 +392,7 @@
 				5CDF64CC23DCD3CC0014B1DA /* AppDelegate.swift in Sources */,
 				5CDF64F523DCD5E30014B1DA /* ForecastsManager.swift in Sources */,
 				5CDF64CE23DCD3CC0014B1DA /* SceneDelegate.swift in Sources */,
+				5CF8E2F123DCF8F9004DEA5C /* ForecastCell.swift in Sources */,
 				5CDF64F723DCD62E0014B1DA /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
