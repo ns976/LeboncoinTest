@@ -23,6 +23,7 @@ class ForecastsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Forecasts"
+        tempValueLabel.isHidden = true
         
         refreshButton.rx.tap
             .bind(to: viewModel.dataRefresh)
@@ -34,13 +35,16 @@ class ForecastsViewController: UIViewController {
                 self.uiRefresh()
             }
             .disposed(by: viewModel.bag)
-        
-        uiRefresh()
     }
     
     func uiRefresh() {
+        if !viewModel.hasData {
+            return
+        }
+        
         collectionView.reloadData()
         globalWeatherImage.image = viewModel.currentForecastIcon()
+        tempValueLabel.isHidden = false
         tempValueLabel.text = viewModel.localAndTempText
     }
     

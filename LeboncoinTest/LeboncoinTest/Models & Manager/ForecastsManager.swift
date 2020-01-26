@@ -61,8 +61,12 @@ extension Reactive where Base: ForecastsManager {
         return Observable.deferred { () -> Observable<[Date: Forecast]> in
             return Observable.create { (observer) -> Disposable in
                 self.base.forecasts { (result) in
-                    observer.onNext(result)
-                    observer.onCompleted()
+                    if result.isEmpty {
+                        observer.onError(NetworkError.noData(url: "/forecasts"))
+                    } else {
+                        observer.onNext(result)
+                        observer.onCompleted()
+                    }
                 }
                 return Disposables.create()
             }

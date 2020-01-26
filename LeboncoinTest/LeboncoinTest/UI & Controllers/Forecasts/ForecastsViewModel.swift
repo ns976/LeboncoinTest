@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxSwiftExt
 import RxCocoa
 
 class ForecastsViewModel {
@@ -18,19 +19,28 @@ class ForecastsViewModel {
     var uiRefresh = PublishRelay<Void>()
     var bag: DisposeBag! = DisposeBag()
     
+    var hasData: Bool {
+        return !manager.currentForecasts.isEmpty
+    }
+    
     init() {
+        //Cette séquence représente le téléchargement des datas,avec exponential breakof en cas d'erreur de requete et retry 3 fois, couplé à la reprise réseau en cas de coupure internet.
+        let remoteGet = manager.rx.forecasts()
+            .retry(RepeatBehavior.exponentialDelayed(maxCount: 3, initial: 0.5, multiplier: 3), scheduler: MainScheduler.instance, shouldRetry: nil)
+            .map(Optional.init)
+            .retryOnBecomesReachable(nil, reachabilityService: try! DefaultReachabilityService())
+            .unwrap()
+        
         //Cette séquence représente la transformation de la demande de refresh de données par le bouton de l'interface en signal représentant l'ordre de refresh UI poussé au controlleur. Lors du tap, on télécharge les données via le manager, qui les enregistre dans sa variable membre "currentForecasts" ainsi que dans le stockage du tel, puis on renvoie l'ordre de mise à jour graphique à l'interface
         dataRefresh
             .debounce(.milliseconds(300), scheduler: MainScheduler.instance)//Delay avant le traitement, anti-spam, optionnel
-            .flatMap(manager.rx.forecasts)
-            .retry(3)
+            .flatMap({ _ in remoteGet })
             .map({ _ in })
             .bind(to: uiRefresh)
             .disposed(by: bag)
         
         //Cette sequence représente le premier téléchargement des données, seulement si il n'y a pas de sauvegarde locale (donc première utilisation)
-        manager.rx.forecasts()
-            .retry(3)
+       remoteGet
             .map({ _ in })
             .bind(to: uiRefresh)
             .disposed(by: bag)
