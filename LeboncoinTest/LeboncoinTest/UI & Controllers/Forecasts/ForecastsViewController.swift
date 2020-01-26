@@ -14,16 +14,15 @@ class ForecastsViewController: UIViewController {
     @IBOutlet weak var refreshButton:       UIButton!
     @IBOutlet weak var globalWeatherImage:  UIImageView!
     @IBOutlet weak var tempValueLabel:      UILabel!
-    @IBOutlet weak var windValueLabel:      UILabel!
-    @IBOutlet weak var cloudsValueLabel:    UILabel!
-    @IBOutlet weak var humidityValueLabel:  UILabel!
-    @IBOutlet weak var pressureValueLabel:  UILabel!
     @IBOutlet weak var collectionView:      UICollectionView!
     
     let viewModel = ForecastsViewModel()
+    var selected: Forecast?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Forecasts"
         
         refreshButton.rx.tap
             .bind(to: viewModel.dataRefresh)
@@ -42,11 +41,13 @@ class ForecastsViewController: UIViewController {
     func uiRefresh() {
         collectionView.reloadData()
         globalWeatherImage.image = viewModel.currentForecastIcon()
-        tempValueLabel.text = viewModel.tempText
-        windValueLabel.text = viewModel.windText
-        cloudsValueLabel.text = viewModel.cloudsText
-        humidityValueLabel.text = viewModel.humidityText
-        pressureValueLabel.text = viewModel.pressureText
+        tempValueLabel.text = viewModel.localAndTempText
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detail = segue.destination as? ForecastDetailViewController, let forecast = selected {
+            detail.viewModel = ForecastDetailViewModel(forecast: forecast, manager: viewModel.manager)
+        }
     }
 }
 
@@ -67,5 +68,10 @@ extension ForecastsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.forecastsByDay[section].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selected = viewModel.forecast(at: indexPath)
+        performSegue(withIdentifier: "forecastsToDetail", sender: self)
     }
 }

@@ -10,21 +10,26 @@ import UIKit
 
 class ForecastDetailViewController: UIViewController {
 
+    @IBOutlet weak var globalWeatherImage:  UIImageView!
+    @IBOutlet weak var tempValueLabel:          UILabel!
+    @IBOutlet weak var windValueLabel:          UILabel!
+    @IBOutlet weak var cloudsValueLabel:        UILabel!
+    @IBOutlet weak var humidityValueLabel:      UILabel!
+    @IBOutlet weak var pressureValueLabel:      UILabel!
+    
+    var viewModel: ForecastDetailViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "Forecast"
+        
+        globalWeatherImage.image = viewModel.currentForecastIcon()
+        tempValueLabel.text = viewModel.localAndTempText
+        windValueLabel.text = viewModel.windText
+        cloudsValueLabel.text = viewModel.cloudsText
+        humidityValueLabel.text = viewModel.humidityText
+        pressureValueLabel.text = viewModel.pressureText
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

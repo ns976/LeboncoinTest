@@ -64,12 +64,16 @@ class ForecastsViewModel {
         return manager.currentCity
     }
     
-    var tempText: String {
-        return "\(cityText)\n\(firstForecast?.temperature.main ?? 0.0)°"
+    var localAndTempText: String {
+        return "\(cityText)\n\(tempText)"
     }
-
+    
+    var tempText: String {
+        return "\(firstForecast?.temperature.main.celsius.rounded ?? 0)°"
+    }
+    
     var windText: String {
-        return "\(firstForecast?.wind._10m ?? 0) m/s"
+        return "\(firstForecast?.wind._10m.rounded ?? 0) km/h"
     }
 
     var cloudsText: String {
@@ -77,39 +81,15 @@ class ForecastsViewModel {
     }
 
     var humidityText: String {
-        return "\(firstForecast?.humidity._2m ?? 0) %"
+        return "\(firstForecast?.humidity._2m.rounded ?? 0) %"
     }
 
     var pressureText: String {
-        return "\(Int(firstForecast?.pressure.seaLvl ?? 0) ) hpa"
+        return "\(Int(firstForecast?.pressure.seaLvl ?? 0) / 100 ) hpa"
     }
 
     func currentForecastIcon() -> UIImage? {
-        forecastIcon(forecast: firstForecast)
-    }
-    
-    func forecastIcon(forecast: Forecast?) -> UIImage? {
-        let dayOrNight: () -> UIImage? = {
-            let hour = Calendar.current.component(.hour, from: Date())
-            if hour > 6 && hour < 18 {
-                return UIImage(named: "day")
-            }
-            return UIImage(named: "night")
-        }
-        
-        if let forecast = forecast {
-            if forecast.snow {
-                return UIImage(named: "snow")
-            } else if forecast.rain {
-                return UIImage(named: "rain")
-            } else if forecast.clouds.total > 10 { //Disons que moins de 10% de nuages, c'est quand même un beau temps
-                return UIImage(named: "cloud")
-            } else {
-                return dayOrNight()
-            }
-        }
-        
-        return dayOrNight()
+        return firstForecast?.picture()
     }
     
     func collectionViewCellText(pattern: NSAttributedString, indexPath: IndexPath) -> (UIImage?, NSAttributedString) {
@@ -128,6 +108,32 @@ class ForecastsViewModel {
         mutableString.replaceOccurrences(of: "{day}", with: day, options: .backwards, range: mutableString.range(of: "{day}"))
         mutableString.replaceOccurrences(of: "{hour}", with: hour, options: .backwards, range: mutableString.range(of: "{hour}"))
         mutableString.replaceOccurrences(of: "{temp}", with: "\(temp)", options: .backwards, range: mutableString.range(of: "{temp}"))
-        return (forecastIcon(forecast: forecast), copy)
+        return (forecast.picture(), copy)
+    }
+    
+    func forecast(at: IndexPath) -> Forecast {
+        return forecastsByDay[at.section][at.row]
+    }
+}
+
+extension Forecast {
+    func picture() -> UIImage? {
+        let dayOrNight: () -> UIImage? = {
+            let hour = Calendar.current.component(.hour, from: Date())
+            if hour > 6 && hour < 18 {
+                return UIImage(named: "day")
+            }
+            return UIImage(named: "night")
+        }
+        
+        if snow {
+            return UIImage(named: "snow")
+        } else if rain {
+            return UIImage(named: "rain")
+        } else if clouds.total > 10 { //Disons que moins de 10% de nuages, c'est quand même un beau temps
+            return UIImage(named: "cloud")
+        }
+        
+        return dayOrNight()
     }
 }

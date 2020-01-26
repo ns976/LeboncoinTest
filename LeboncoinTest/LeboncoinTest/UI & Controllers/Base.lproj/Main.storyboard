@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HM0-Y4-r33">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wma-Wj-tiP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dlx-AM-Vby"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hKJ-oQ-GmA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="hTE-77-usE">
-                                <rect key="frame" x="167" y="60" width="80" height="80"/>
+                                <rect key="frame" x="167" y="16" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="NGc-WS-uoQ"/>
                                     <constraint firstAttribute="height" constant="80" id="mhJ-v9-p1V"/>
@@ -30,128 +30,15 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="3cm-hA-Qbw">
-                                <rect key="frame" x="20" y="156" width="374" height="63"/>
+                                <rect key="frame" x="20" y="112" width="374" height="63"/>
                                 <string key="text">{city}
 {temp}°</string>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="28"/>
                                 <color key="textColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X07-Um-Mhq">
-                                <rect key="frame" x="87" y="249" width="240" height="112"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGX-zU-2nv">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chX-ox-5Xj">
-                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="28"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Vent:">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <font key="NSFont" size="24" name="Arial-Black"/>
-                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{wind} m/s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODC-Q4-Tgx">
-                                                <rect key="frame" x="147.5" y="0.0" width="92.5" height="28"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWv-KW-SX1">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyw-9x-Di8">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="28"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Nuages:">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <font key="NSFont" size="24" name="Arial-Black"/>
-                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{clouds} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wid-bX-0cw">
-                                                <rect key="frame" x="145" y="0.0" width="95" height="28"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8os-Lb-aa3">
-                                        <rect key="frame" x="0.0" y="56" width="240" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V20-VM-EcZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="28"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Humidité:">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <font key="NSFont" size="24" name="Arial-Black"/>
-                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{humidity} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-c8-IVD">
-                                                <rect key="frame" x="128.5" y="0.0" width="111.5" height="28"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydV-v6-HMI">
-                                        <rect key="frame" x="0.0" y="84" width="240" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oj-ft-bNy">
-                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Pression:">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <font key="NSFont" size="24" name="Arial-Black"/>
-                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{pressure} hpa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-Bv-P36">
-                                                <rect key="frame" x="109.5" y="0.0" width="130.5" height="28"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="CRD-Yd-oGr"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="zsW-VL-NDk"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="stack"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
-                                </userDefinedRuntimeAttributes>
-                            </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FGR-0L-loA">
-                                <rect key="frame" x="20" y="391" width="374" height="391"/>
+                                <rect key="frame" x="20" y="195" width="374" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="HIX-Y0-Cej">
                                     <size key="itemSize" width="80" height="130"/>
@@ -213,7 +100,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-ZU-DqC">
-                                <rect key="frame" x="187" y="802" width="40" height="40"/>
+                                <rect key="frame" x="187" y="714" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OWZ-1u-cFv"/>
                                     <constraint firstAttribute="width" constant="40" id="Yjh-KB-8wn"/>
@@ -223,41 +110,230 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="omW-tD-0w1" firstAttribute="bottom" secondItem="Ntc-ZU-DqC" secondAttribute="bottom" constant="20" id="1CE-Qc-aUO"/>
+                            <constraint firstItem="FGR-0L-loA" firstAttribute="top" secondItem="3cm-hA-Qbw" secondAttribute="bottom" constant="20" id="74R-dP-pz2"/>
                             <constraint firstItem="FGR-0L-loA" firstAttribute="trailing" secondItem="omW-tD-0w1" secondAttribute="trailing" constant="-20" id="B5g-0f-qBL"/>
                             <constraint firstItem="omW-tD-0w1" firstAttribute="trailing" secondItem="3cm-hA-Qbw" secondAttribute="trailing" constant="20" id="KCz-si-Sbp"/>
-                            <constraint firstItem="X07-Um-Mhq" firstAttribute="top" secondItem="3cm-hA-Qbw" secondAttribute="bottom" constant="30" id="KRm-Pl-M9j"/>
-                            <constraint firstItem="hTE-77-usE" firstAttribute="top" secondItem="fqD-Y6-l7y" secondAttribute="bottom" constant="16" id="Nik-LH-b39"/>
+                            <constraint firstItem="hTE-77-usE" firstAttribute="top" secondItem="omW-tD-0w1" secondAttribute="top" constant="16" id="Nxb-B4-62S"/>
                             <constraint firstItem="3cm-hA-Qbw" firstAttribute="leading" secondItem="omW-tD-0w1" secondAttribute="leading" constant="20" id="P33-MY-QuC"/>
                             <constraint firstItem="hTE-77-usE" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="PzT-Yo-omO"/>
-                            <constraint firstItem="X07-Um-Mhq" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="WRh-s8-Smg"/>
                             <constraint firstItem="Ntc-ZU-DqC" firstAttribute="top" secondItem="FGR-0L-loA" secondAttribute="bottom" constant="20" id="dsP-8l-BgY"/>
-                            <constraint firstItem="X07-Um-Mhq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="omW-tD-0w1" secondAttribute="leading" constant="10" id="eI5-ak-HBf"/>
                             <constraint firstItem="FGR-0L-loA" firstAttribute="leading" secondItem="omW-tD-0w1" secondAttribute="leading" constant="20" id="fxC-uY-0sd"/>
-                            <constraint firstItem="dlx-AM-Vby" firstAttribute="top" secondItem="Ntc-ZU-DqC" secondAttribute="bottom" constant="20" id="i0T-kV-ytj"/>
                             <constraint firstItem="3cm-hA-Qbw" firstAttribute="top" secondItem="hTE-77-usE" secondAttribute="bottom" constant="16" id="pYO-gp-hfB"/>
-                            <constraint firstItem="FGR-0L-loA" firstAttribute="top" secondItem="X07-Um-Mhq" secondAttribute="bottom" constant="30" id="ue4-67-4nk"/>
                             <constraint firstItem="Ntc-ZU-DqC" firstAttribute="centerX" secondItem="hKJ-oQ-GmA" secondAttribute="centerX" id="vN3-Tj-X7p"/>
-                            <constraint firstItem="omW-tD-0w1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X07-Um-Mhq" secondAttribute="trailing" constant="10" id="yyc-yd-xCe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="omW-tD-0w1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1xU-qz-QJT"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="cloudsValueLabel" destination="wid-bX-0cw" id="jLx-2u-nht"/>
                         <outlet property="collectionView" destination="FGR-0L-loA" id="OoO-BM-QDQ"/>
                         <outlet property="globalWeatherImage" destination="hTE-77-usE" id="AZV-Fc-LDX"/>
-                        <outlet property="humidityValueLabel" destination="KDf-c8-IVD" id="iWS-zT-K5a"/>
-                        <outlet property="pressureValueLabel" destination="f3K-Bv-P36" id="fk9-C8-F6h"/>
                         <outlet property="refreshButton" destination="Ntc-ZU-DqC" id="sbW-jW-F2C"/>
                         <outlet property="tempValueLabel" destination="3cm-hA-Qbw" id="lXZ-Eq-ptg"/>
-                        <outlet property="windValueLabel" destination="ODC-Q4-Tgx" id="cST-Zs-DGH"/>
+                        <segue destination="1Wz-PJ-78u" kind="show" identifier="forecastsToDetail" id="iCd-S5-3ot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFn-gn-p2n" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="78"/>
+            <point key="canvasLocation" x="1857.9710144927537" y="77.678571428571431"/>
+        </scene>
+        <!--Forecast Detail View Controller-->
+        <scene sceneID="QIg-Ko-LeB">
+            <objects>
+                <viewController storyboardIdentifier="ForecastDetailViewController" id="1Wz-PJ-78u" customClass="ForecastDetailViewController" customModule="LeboncoinTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Try-KB-XZE"/>
+                        <viewControllerLayoutGuide type="bottom" id="yw7-7K-9Uc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HIB-5M-NOz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="C5n-Oh-rfi">
+                                <rect key="frame" x="20" y="112" width="374" height="63"/>
+                                <string key="text">{city}
+{temp}°</string>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="28"/>
+                                <color key="textColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-Ji-KBl">
+                                <rect key="frame" x="87" y="205" width="240" height="112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg1-RS-2vt">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-Zh-Ozj">
+                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Vent:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{wind} m/s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJx-8z-RA7">
+                                                <rect key="frame" x="147.5" y="0.0" width="92.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEh-fk-nr4">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-tD-YoV">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Nuages:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{clouds} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q11-tN-FcM">
+                                                <rect key="frame" x="145" y="0.0" width="95" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O92-lb-GdY">
+                                        <rect key="frame" x="0.0" y="56" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV0-Ph-Hek">
+                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Humidité:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{humidity} %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY9-9A-Wgk">
+                                                <rect key="frame" x="128.5" y="0.0" width="111.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPN-8R-hP6">
+                                        <rect key="frame" x="0.0" y="84" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hq-Sc-rNg">
+                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Pression:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{pressure} hpa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fha-1a-rUe">
+                                                <rect key="frame" x="109.5" y="0.0" width="130.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="1ZL-ZB-eo6"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="yA2-dY-Ort"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="stack"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="3hM-DT-zRi">
+                                <rect key="frame" x="167" y="17" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5Lh-TH-oL9"/>
+                                    <constraint firstAttribute="height" constant="80" id="Luc-eC-AS6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="logo"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ucY-Ji-KBl" firstAttribute="top" secondItem="C5n-Oh-rfi" secondAttribute="bottom" constant="30" id="9vL-Uf-r5k"/>
+                            <constraint firstItem="3hM-DT-zRi" firstAttribute="top" secondItem="jR6-j9-Zzc" secondAttribute="top" constant="17" id="D1q-QR-1Id"/>
+                            <constraint firstItem="ucY-Ji-KBl" firstAttribute="centerX" secondItem="HIB-5M-NOz" secondAttribute="centerX" id="ISz-AN-1Yl"/>
+                            <constraint firstItem="C5n-Oh-rfi" firstAttribute="leading" secondItem="jR6-j9-Zzc" secondAttribute="leading" constant="20" id="L2U-wZ-FKf"/>
+                            <constraint firstItem="jR6-j9-Zzc" firstAttribute="trailing" secondItem="C5n-Oh-rfi" secondAttribute="trailing" constant="20" id="TGF-jp-O2d"/>
+                            <constraint firstItem="ucY-Ji-KBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jR6-j9-Zzc" secondAttribute="leading" constant="10" id="bDx-eh-cHf"/>
+                            <constraint firstItem="C5n-Oh-rfi" firstAttribute="top" secondItem="jR6-j9-Zzc" secondAttribute="top" constant="112" id="boB-cq-tzX"/>
+                            <constraint firstItem="jR6-j9-Zzc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ucY-Ji-KBl" secondAttribute="trailing" constant="10" id="mgp-iV-1qa"/>
+                            <constraint firstItem="3hM-DT-zRi" firstAttribute="centerX" secondItem="HIB-5M-NOz" secondAttribute="centerX" id="mmB-uo-Ifq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jR6-j9-Zzc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0yd-7c-KZI"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="cloudsValueLabel" destination="q11-tN-FcM" id="v4W-pi-AYC"/>
+                        <outlet property="globalWeatherImage" destination="3hM-DT-zRi" id="eEk-zi-myr"/>
+                        <outlet property="humidityValueLabel" destination="lY9-9A-Wgk" id="6Dl-AQ-M95"/>
+                        <outlet property="pressureValueLabel" destination="fha-1a-rUe" id="JZj-ae-ejn"/>
+                        <outlet property="tempValueLabel" destination="C5n-Oh-rfi" id="Ymp-Q9-K32"/>
+                        <outlet property="windValueLabel" destination="RJx-8z-RA7" id="u1B-WF-wnX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Hj-BL-H0m" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2739.130434782609" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wRe-Ea-9D0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wma-Wj-tiP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Fg0-FG-FA9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HM0-Y4-r33" kind="relationship" relationship="rootViewController" id="lhI-Nh-px1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fc-BZ-9gk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
