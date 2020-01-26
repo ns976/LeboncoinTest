@@ -24,11 +24,23 @@ class LeboncoinTestTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testApiAndStorage() {
+        let exp = expectation(description: "exp")
+        
+        var manager = ForecastsManager()
+        var forecasts: [Date: Forecast]?
+        
+        manager.forecasts { (result) in
+            forecasts = result
+            exp.fulfill()
         }
+        
+        wait(for: [exp], timeout: 5.0)
+        XCTAssertNotNil(forecasts)
+        XCTAssertFalse(forecasts!.isEmpty)
+        
+        manager = ForecastsManager()
+        XCTAssertTrue(manager.currentForecasts.count == forecasts!.count)
     }
 
 }
